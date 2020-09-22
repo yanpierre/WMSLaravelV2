@@ -17,10 +17,8 @@ class PagesController extends Controller
         $GR = db::select('exec Get_UnLocatedGRWeb') ;
         $TTS = db::select('exec GET_TTSWeb') ;
         $REQ1 = db::select('exec Get_NewRequisitionWeb');
-        //$IUC = db::select('exec Get_UsageUncompleteWeb');
-        //,['IUC' => $IUC]
-        //
-        return view('Dashboard',['GR' => $GR,'TTS' => $TTS,'REQ1' => $REQ1]);
+        $IUC = db::select('exec Get_UsageUncompleteWeb');
+        return view('Dashboard',['GR' => $GR,'TTS' => $TTS,'REQ1' => $REQ1,'IUC' => $IUC]);
         
     }
 
